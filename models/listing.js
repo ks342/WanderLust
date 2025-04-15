@@ -7,14 +7,13 @@ const ListingSchema = new Schema({
       required:true,
     },
     description:String,
-    image:{
-     type:String,
-     default:"https://unsplash.com/photos/a-person-swimming-in-the-ocean-with-a-camera-NhWxAIs61MM" ,
-     set: (v) => v === ""
-     ? "https://unsplash.com/photos/a-person-swimming-in-the-ocean-with-a-camera-NhWxAIs61MM" 
-     : v,
-// here set is used to set default value based on some conditions to any field value in model
-    },
+
+// // here set is used to set default value based on some conditions to any field value in model
+image: {
+       url:String,
+       filename:String,
+},
+
     price:Number,
     location:String,
     country:String,
@@ -22,8 +21,12 @@ const ListingSchema = new Schema({
       {
         type:Schema.Types.ObjectId,
         ref:"Review",
-      }
-    ]
+      },
+    ],
+    owner:{
+      type:Schema.Types.ObjectId,
+      ref:"User",
+    },
 });
 
 ListingSchema.post("findOneAndDelete",async(listing)=>{
