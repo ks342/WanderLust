@@ -125,3 +125,91 @@ font-weight: 400 !important;
     height:400px;
     width:80vh;
 }
+
+/* Responsive fixes for mobile */
+@media (max-width: 768px) {
+    /* Fix map width on mobile */
+    #map {
+        width: 100%;
+        height: 300px;
+    }
+    
+    /* Adjust column offsets for mobile */
+    .col-8.offset-2, .col-6.offset-3, .col-8.offset-3 {
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    /* Fix button layout on mobile */
+    .btns {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btns .btn, .btns form {
+        margin: 5px 0;
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    /* Fix review cards on mobile */
+    .card.col-5 {
+        width: 100%;
+        margin-left: 0 !important;
+    }
+    
+    /* Fix navbar on mobile */
+    .navbar-nav {
+        margin-top: 10px;
+    }
+    
+    /* Fix footer on mobile */
+    .f-info {
+        height: auto;
+        padding: 15px 0;
+    }
+    
+    /* Fix form elements on mobile */
+    .form-control {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    /* Fix star rating on mobile */
+    .starability-slot {
+        width: 100%;
+    }
+    
+    /* Fix image display on mobile */
+    .show-img {
+        height: 200px;
+    }
+    
+    /* Fix original image display on edit page */
+    .mb-3 img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Additional fixes for very small screens */
+@media (max-width: 480px) {
+    .show-img {
+        height: 150px;
+    }
+    
+    #map {
+        height: 250px;
+    }
+    
+    .card-text {
+        font-size: 0.9rem;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+    }
+    
+    .navbar-brand i {
+        font-size: 1.5rem;
+    }
+}

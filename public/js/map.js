@@ -1,12 +1,11 @@
+mapboxgl.accessToken = mapToken;
+const map = new mapboxgl.Map({
+    container: "map", // container ID
+    center: listing.geometry.coordinates, // starting position [lng, lat]. Note that lat must be set between -90 and 90
+    zoom: 9, // starting zoom
+});
 
-	mapboxgl.accessToken = mapToken ;
-    const map = new mapboxgl.Map({
-        container: "map", // container ID
-        center: listing.geometry.coordinates, // starting position [lng, lat]. Note that lat must be set between -90 and 90
-        zoom: 9, // starting zoom
-    });
-  
- // Create a new marker.
+// Create a new marker.
 const marker = new mapboxgl.Marker({color:"red"})
 .setLngLat(listing.geometry.coordinates)   
 .setPopup(
@@ -16,3 +15,11 @@ const marker = new mapboxgl.Marker({color:"red"})
     )
 )
 .addTo(map);
+
+// Add responsive controls
+map.addControl(new mapboxgl.NavigationControl());
+
+// Make map responsive
+window.addEventListener('resize', () => {
+    map.resize();
+});
