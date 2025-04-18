@@ -16,6 +16,29 @@ body{
     background-color: white;
 }
 
+/* Fix for mobile navigation menu */
+@media (max-width: 768px) {
+    .navbar-collapse {
+        background-color: white;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .navbar-nav {
+        margin-top: 10px;
+    }
+    
+    .navbar-nav .nav-link {
+        padding: 8px 0;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .navbar-nav .nav-link:last-child {
+        border-bottom: none;
+    }
+}
+
 .fa-compass{
     color: #fe424d;
     font-size: 2rem;
